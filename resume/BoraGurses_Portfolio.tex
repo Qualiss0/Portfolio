@@ -1,0 +1,190 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm, bottom=2 cm, left=2 cm, right=2 cm,
+    footskip=1.0 cm
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Bora Gürses Portfolio},
+    pdfauthor={Bora Gürses},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Bora Gürses - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{
+    \needspace{4\baselineskip}
+    \Large\color{primaryColor}
+}{}{
+}{
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[]
+
+\titlespacing{\section}{-1pt}{0.3cm}{0.2cm}
+
+\newenvironment{highlights}{
+    \begin{itemize}[topsep=0.10 cm, parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=0.6 cm]
+}{
+    \end{itemize}
+}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2 cm}{0.2 cm}
+}{
+    \end{adjustwidth}
+}
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\placelastupdatedtext}{
+  \AddToShipoutPictureFG*{
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated May 2025}
+    }}}%
+  }%
+}
+
+\begin{document}
+\placelastupdatedtext
+
+\begin{header}
+    \fontsize{30 pt}{30 pt}
+    \textbf{Bora Gürses}
+
+    \vspace{0.3 cm}
+
+    \normalsize
+    \mbox{{\footnotesize\faMapMarker*}\hspace*{0.13cm}Berlin, Germany}%
+    \hspace{0.4cm}
+    \mbox{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}bora.gurses@gisma-student.com}%
+    \hspace{0.4cm}
+    \mbox{{\footnotesize\faPhone*}\hspace*{0.13cm}+49 155 1061 0599}%
+    \hspace{0.4cm}
+    \mbox{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}\href{https://linkedin.com/in/bora-gürses-29b0232ba}{linkedin.com/in/bora-gürses}}%
+    \hspace{0.4cm}
+    \mbox{{\footnotesize\faGithub}\hspace*{0.13cm}\href{https://github.com/Qualiss0}{github.com/Qualiss0}}%
+\end{header}
+
+\vspace{0.3 cm}
+
+\section{About Me}
+\begin{onecolentry}
+Aspiring Computer Science student based in Berlin, currently studying at GISMA University of Applied Sciences.I am eager to grow in the fields of data and software engineering while developing my academic and professional skill set.
+\end{onecolentry}
+
+
+\section{Education}
+\begin{onecolentry}
+\textbf{B.Sc. Computer Science – GISMA University of Applied Sciences  |  Berlin, Germany} \hfill \textit{Oct 2024 – Sep 2028}
+\end{onecolentry}
+\begin{highlights}
+\item Emphasis on core programming principles, data structures, and computational logic.
+\item Relevant coursework: Introduction to Python Programming, Data Structures and Algorithms, Databases and Big Data.
+\item Building a strong foundation in both theoretical and practical aspects of computer science.
+\end{highlights}
+
+
+
+
+
+\section{Skills}
+\begin{onecolentry}
+\textbf{Technical:} Computer Literacy, Microsoft Office (Word, Excel, PowerPoint), Online Collaboration Tools
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+\textbf{Soft Skills:} Teamwork, Critical Thinking, Helpfulness, Leadership
+\end{onecolentry}
+
+\vspace{0.1cm}
+
+\begin{onecolentry}
+\textbf{Languages:} Turkish (native), English (B2)
+\end{onecolentry}
+
+\section{Contact}
+\begin{onecolentry}
+\textbf{Email:} \href{mailto:bora.gurses@gisma-student.com}{bora.gurses@gisma-student.com}
+\end{onecolentry}
+\begin{onecolentry}
+\textbf{GitHub:} \href{https://github.com/Qualiss0}{github.com/Qualiss0}
+\end{onecolentry}
+\begin{onecolentry}
+\textbf{LinkedIn:} \href{https://linkedin.com/in/bora-gürses-29b0232ba}{linkedin.com/in/bora-gürses}
+\end{onecolentry}
+\begin{onecolentry}
+\textbf{Phone:} +49 155 1061 0599
+\end{onecolentry}
+
+\end{document}
