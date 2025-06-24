@@ -31,6 +31,10 @@ View the site on GitHub Pages:
 This project demonstrates how LaTeX documents can be integrated into a modern HTML portfolio.  
 It is part of a Computer Science coursework assignment for personal branding and GitHub Pages deployment.
 
+## ⚙️ Project
+
+[GitHub](https://github.com/Qualiss0/Snake-Game-By-Bora-Gurses)
+
 ## 📬 Contact
 
 - 📧 bora.gurses@gisma-student.com  
